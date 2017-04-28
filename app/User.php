@@ -32,6 +32,15 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function createProfile()
+    {
+        Profile::create([
+            'user_id' => $this->id,
+            'avatar' => 'default/avatar.png',
+            'bio' => ''
+        ]);
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class);
