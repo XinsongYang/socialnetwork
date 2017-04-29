@@ -13,10 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth')->except(['index']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth')->except(['index']);
+    // }
 
     /**
      * Show the application dashboard.
@@ -29,8 +29,9 @@ class HomeController extends Controller
         {
             return view('welcome');
         }
-        $posts = Auth::user()->posts;
-        //dd($posts);
-        return view('home', compact('posts'));
+        $user = Auth::user();
+        $profile = $user->profile;
+        $posts = $user->posts;
+        return view('user', compact('user', 'profile', 'posts'));
     }
 }

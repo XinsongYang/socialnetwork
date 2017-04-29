@@ -7,5 +7,8 @@
         </div>
         <h2>{{ $user->name }}</h2>
         <p>{{ $profile->bio }}</p>
+        @if (Auth::check() and Auth::user()->id == $user->id)
+            <a class="btn btn-default" href="{{ url('/profile/edit') }}" role="button">Edit</a>
+        @endif
     </div>
 </div>

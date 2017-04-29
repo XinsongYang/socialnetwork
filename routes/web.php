@@ -19,6 +19,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/{username}', 'UsersController@user');
 
-Route::post('/posts', 'PostsController@store');
+Route::get('/profile/edit', 'ProfilesController@edit');
+
+Route::post('/profile/edit', 'ProfilesController@update');
+
+Route::post('/posts', 'PostsController@update');
 
 // GET POST PATCH DELETE

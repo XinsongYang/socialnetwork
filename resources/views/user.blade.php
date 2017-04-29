@@ -5,7 +5,7 @@
 @endsection
 
 @section ('left')
-@include ('users.profile')
+@include ('profiles.profile')
 @endsection
 
 @section ('right')

@@ -47,7 +47,7 @@ class PostsController extends Controller
         // $post->body = request('body');
         // $post->save();
         $this->validate(request(), [
-            'title' => 'required|max:35',
+            'title' => 'image',
             'body' => 'required|max:200'
         ]);
 
