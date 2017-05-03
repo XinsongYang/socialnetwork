@@ -43,6 +43,9 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
+        $this->validate(request(), [
+            'keyword' => 'required|max:10'
+        ]);
         $keyword = '%' . $request->input('keyword') . '%';
         $users = User::orWhere('name', 'like', $keyword)->get();
         $posts = Post::orWhere('title', 'like', $keyword)->get();

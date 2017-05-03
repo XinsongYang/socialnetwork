@@ -3,11 +3,11 @@
 		{{ csrf_field() }}
 		
 		<div class="form-group">
-			<input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+			<input type="text" class="form-control" id="title" name="title" placeholder="Title" required maxlength="40">
 		</div>
 		
 		<div class="form-group">
-			<textarea id="body" name="body" class="form-control" placeholder="What's happening?" required></textarea>
+			<textarea id="body" name="body" class="form-control" placeholder="What's happening?" required maxlength="200"></textarea>
 		</div>
 		
 		<div class="form-group row">

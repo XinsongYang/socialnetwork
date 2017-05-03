@@ -32,7 +32,7 @@
             <form class="navbar-form navbar-left" role="search" method="GET" action="/search">
                  {{ csrf_field() }}
                 <div class="form-group">
-                    <input type="text" name="keyword" class="form-control" required />
+                    <input type="text" name="keyword" class="form-control" maxlength="10" required />
                 </div> 
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
