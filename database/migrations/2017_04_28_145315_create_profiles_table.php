@@ -17,9 +17,11 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->index('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->string('avatar');
             $table->string('bio');
+            $table->string('location');
+            $table->string('job');
             $table->timestamps();
         });
     }

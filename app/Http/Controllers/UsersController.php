@@ -14,9 +14,7 @@ class UsersController extends Controller
         {
         	return view('404');
         }
-        $profile = $user->profile;
-        $posts = $user->posts;
-        //dd($posts);
-        return view('user', compact('user', 'profile', 'posts'));
+        
+        return view('user', compact('user'));
     }
 }

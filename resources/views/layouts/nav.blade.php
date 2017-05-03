@@ -21,17 +21,20 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 @if (Auth::check())
+                <li><a href="/moments">Moments</a></li>
                 <li><a href="#">Notifications</a></li>
                 <li><a href="#">Messages</a></li>
                 @else
                 &nbsp;
                 @endif    
             </ul>
-
-            <form class="navbar-form navbar-left" role="search">
+       
+            <form class="navbar-form navbar-left" role="search" method="GET" action="/search">
+                 {{ csrf_field() }}
                 <div class="form-group">
-                    <input type="text" class="form-control" />
-                </div> <button type="submit" class="btn btn-default">Search</button>
+                    <input type="text" name="keyword" class="form-control" required />
+                </div> 
+                <button type="submit" class="btn btn-default">Search</button>
             </form>
             
             <!-- Right Side Of Navbar -->

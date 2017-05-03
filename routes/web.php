@@ -13,16 +13,31 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@home');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@home');
 
-Route::get('/{username}', 'UsersController@user');
+Route::get('/friends', 'FriendsController@show');
+
+Route::post('/addfriend/{id}', 'FriendsController@add');
+
+Route::post('/removefriend/{id}', 'FriendsController@remove');
 
 Route::get('/profile/edit', 'ProfilesController@edit');
 
 Route::post('/profile/edit', 'ProfilesController@update');
 
-Route::post('/posts', 'PostsController@update');
+Route::post('/posts', 'PostsController@store');
 
+Route::delete('/posts/{id}', 'PostsController@destroy');
+
+Route::post('/comments/{id}', 'CommentsController@store');
+
+Route::post('/likes/{id}', 'LikesController@click');
+
+Route::get('/moments', 'HomeController@index');
+
+Route::get('/search', 'HomeController@search');
+
+Route::get('/{username}', 'UsersController@user');
 // GET POST PATCH DELETE

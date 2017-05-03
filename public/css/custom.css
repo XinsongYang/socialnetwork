@@ -1,4 +1,117 @@
-.profile-avatar-image {
+.clear { 
+	clear:both
+}
+
+.flowhidden {
+	overflow:hidden;
+}
+
+.profile-box {
+	text-align: center;
+	background: white;
+	padding: 10px;
+	border: 1px solid #e6ecf0;
+}
+
+.info-box {
+	margin: 10px;
+}
+
+img.profile-avatar-image {
+	object-fit: cover;
 	width: 150px;
 	height: 150px;
+}
+
+img.post-avatar-image {
+	border-radius: 100%;
+	object-fit: cover;
+	width: 36px;
+	height: 36px;
+}
+
+img.comment-avatar-image {
+	object-fit: cover;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+}
+
+div.send-post-box {
+	overflow:hidden;
+	padding: 15px;
+	border: 1px solid #e6ecf0;
+}
+
+div.input-file > input {
+	display: none;
+}
+
+img.icon {
+	height: 30px;
+}
+
+div.post {
+	background: white;
+	padding: 0 20px 20px 20px;
+	border: 1px solid #e6ecf0;
+}
+
+ul.posts {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.users {
+	list-style-type: none;
+	padding: 0px;
+    margin: 0px;
+}
+
+.users li {
+	margin: 10px 0;
+}
+
+img.upload {
+  object-fit: cover;
+  width:150px;
+  height:150px;
+}
+
+div.delete-btn {
+	margin-top: 22px;
+}
+
+.privacy-span {
+	margin: 30px 20px 0 20px;
+}
+
+div.handle {
+	margin-top: 15px;
+}
+
+.comment-box {
+	margin-top: 10px;
+}
+
+ul.comments {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.comment {
+	padding: 10px 0;
+	border-bottom: 1px solid #e6ecf0;
+}
+
+.time {
+	color: #808080;
+	font-family: 'Helvetica';
+	font-size: 12px;
+}
+
+button.liked {
+	color: red;
 }

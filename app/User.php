@@ -37,13 +37,55 @@ class User extends Authenticatable
         Profile::create([
             'user_id' => $this->id,
             'avatar' => 'default/avatar.png',
-            'bio' => ''
+            'bio' => '',
+            'location' => '',
+            'job' => ''
         ]);
+    }
+
+    public function friends()
+    {
+        return $this->hasMany(Friend::class);
+    }
+
+    public function addFriend($id)
+    {
+        Friend::create([
+            'user_id' => $this->id,
+            'friend_id' => $id
+        ]);
+    }
+
+    public function removeFriend($id)
+    {
+        Friend::where('user_id', $this->id)
+              ->where('friend_id', $id)
+              ->delete();
     }
 
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
     }
 
     public function publish(Post $post)

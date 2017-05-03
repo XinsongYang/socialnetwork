@@ -23,9 +23,12 @@ class ProfilesController extends Controller
 
     public function update(Request $request)
     {
+        //dd(request()->all());
         $this->validate(request(), [
             'avatar' => 'image',
-            'bio' => 'max:100'
+            'bio' => 'max:100',
+            'location' => 'max:20',
+            'job' => 'max:10'
         ]);
         if ($request->hasFile('avatar'))
         {
@@ -35,9 +38,11 @@ class ProfilesController extends Controller
             Auth::user()->profile->avatar = $path;
         }
         Auth::user()->profile->update([
-            'bio' => $request->input('bio')
+            'bio' => $request->input('bio'), 
+            'location' => $request->input('location'),
+            'job' => $request->input('job')
         ]);
-        return redirect(Auth::user()->name);
+        return redirect('/');
         // PATCH /posts/id
     }
 }
