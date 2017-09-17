@@ -34,7 +34,7 @@ class ProfilesController extends Controller
         {
             // $avatar = $request->file('avatar');
             // $path = Image::make($avatar)->resize(300, 300)->storePublicly('public/avatars');
-            $path = $request->file('avatar')->storePublicly('public/avatars');
+            $path = $request->file('avatar')->storePublicly('public/avatars', 's3');
             Auth::user()->profile->avatar = $path;
         }
         Auth::user()->profile->update([

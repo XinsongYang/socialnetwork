@@ -18,7 +18,7 @@ $postUser = App\User::find($post->user_id);
 	<div class="clear"></div>	
 	<div>
 		<a href="{{ url($postUser->name) }}">
-			<img src="{{ Storage::url($postUser->profile->avatar) }}" alt="{{ $postUser->name }}" class="post-avatar-image">
+			<img src="{{ Storage::disk('s3')->url($postUser->profile->avatar) }}" alt="{{ $postUser->name }}" class="post-avatar-image">
 		</a>
 		<a href="{{ url($postUser->name) }}">{{ $postUser->name }}</a>
 		<span class="time">{{ $post->created_at->timezone('America/Toronto')->format('H:i:s - M j, Y')  }}</span>
@@ -30,15 +30,15 @@ $postUser = App\User::find($post->user_id);
 	<p class="post-body">{{ $post->body }}</p>
 	<div>
 		@foreach ($post->images as $image)
-			<a href="{{ Storage::url($image->path) }}">
-				<img src="{{ Storage::url($image->path) }}"  class="img-thumbnail upload">
+			<a href="{{ Storage::disk('s3')->url($image->path) }}">
+				<img src="{{ Storage::disk('s3')->url($image->path) }}"  class="img-thumbnail upload">
 			</a>
 		@endforeach
 	</div>
 	@if ($post->video)
 		<div>
 			<video width="480" controls>
-			  <source src={{ Storage::url($post->video->path) }} type="video/mp4">
+			  <source src={{ Storage::disk('s3')->url($post->video->path) }} type="video/mp4">
 			Your browser does not support the video tag.
 			</video>
 		</div>

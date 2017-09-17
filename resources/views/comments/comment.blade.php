@@ -5,7 +5,7 @@ $commentUser = $comment->user;
 <div class="comment flowhidden" >
 	<div class="pull-left">
 		<a href="{{ url($commentUser->name) }}" >
-			<img src="{{ Storage::url($commentUser->profile->avatar) }}" alt="{{ $commentUser->name }}" class="comment-avatar-image">
+			<img src="{{ Storage::disk('s3')->url($commentUser->profile->avatar) }}" alt="{{ $commentUser->name }}" class="comment-avatar-image">
 		</a>
 	</div>
 	<div class="pull-left">

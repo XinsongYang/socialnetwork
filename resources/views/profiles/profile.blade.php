@@ -1,7 +1,7 @@
 <div class="profile-box">
 
     <div class="profile-avatar">
-    	<img src="{{ Storage::url($profile->avatar) }}" alt="{{ $user->name }}" class="profile-avatar-image img-rounded">
+    	<img src="{{ Storage::disk('s3')->url($profile->avatar) }}" alt="{{ $user->name }}" class="profile-avatar-image img-rounded">
     </div>
     <h2>{{ $user->name }}</h2>
     <p>{{ $profile->bio }}</p>
