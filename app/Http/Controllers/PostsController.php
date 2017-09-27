@@ -83,7 +83,7 @@ class PostsController extends Controller
         {
             foreach ($request->imageFiles as $image)
             {
-                $path = $image->storePublicly('public/images', 's3');
+                $path = $image->storePublicly('public/images');
                 Image::create([
                     'path' => $path,
                     'post_id' => $post->id
@@ -92,7 +92,7 @@ class PostsController extends Controller
         }
         if ($request->hasFile('videoFile'))
         {
-            $path = $request->file('videoFile')->storePublicly('public/videos', 's3');
+            $path = $request->file('videoFile')->storePublicly('public/videos');
             Video::create([
                 'path' => $path,
                 'post_id' => $post->id

@@ -13,7 +13,7 @@
 			<div class="form-group">
 				<label for="avatar">Avatar</label>
 				<div class="profile-avatar">
-					<img src="{{ Storage::disk('s3')->url($profile->avatar) }}" alt="{{ $user->name }}" id="avatarImg" class="profile-avatar-image" >
+					<img src="{{ Storage::url($profile->avatar) }}" alt="{{ $user->name }}" id="avatarImg" class="profile-avatar-image" >
 				</div>
 				<input type="file" id="avatar" name="avatar" onchange="display(this);">
 			</div>
